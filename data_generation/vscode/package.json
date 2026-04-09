@@ -1,0 +1,54 @@
+{
+  "name": "vscode-cursor-coords",
+  "displayName": "Cursor Pixel Coordinates",
+  "description": "Collects exact pixel coordinates of the cursor position for GUI grounding research.",
+  "version": "0.0.1",
+  "publisher": "devdiv",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:cursorCoords.start",
+    "onCommand:cursorCoords.stop",
+    "onCommand:cursorCoords.inject",
+    "onCommand:cursorCoords.uninject"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursorCoords.start",
+        "title": "Cursor Coords: Start Collection"
+      },
+      {
+        "command": "cursorCoords.stop",
+        "title": "Cursor Coords: Stop Collection"
+      },
+      {
+        "command": "cursorCoords.inject",
+        "title": "Cursor Coords: Inject DOM Payload"
+      },
+      {
+        "command": "cursorCoords.uninject",
+        "title": "Cursor Coords: Remove DOM Payload"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@types/ws": "^8.18.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
+}

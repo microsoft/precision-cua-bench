@@ -1,0 +1,19 @@
+name: gta1-7b-gpu-training
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip>=24.2
+  - pip:
+      - torch==2.8.0+cu126
+      - torchvision==0.23.0+cu126
+      - transformers>=4.56.1
+      - trl
+      - accelerate
+      - peft
+      - liger-kernel
+      - deepspeed
+      - wandb
+      - --extra-index-url https://download.pytorch.org/whl/cu126
