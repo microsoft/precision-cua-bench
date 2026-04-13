@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft. All rights reserved.
+
 import * as vscode from 'vscode';
 import { BridgeServer } from './bridge-server';
 import { injectPayload, uninjectPayload } from './injector';

@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft. All rights reserved.
+
 import { WebSocketServer, WebSocket } from 'ws';
 import { EventEmitter } from 'events';
 

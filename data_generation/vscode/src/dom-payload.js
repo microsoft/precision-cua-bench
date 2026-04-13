@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft. All rights reserved.
+
 // dom-payload.js
 // This script runs inside VS Code's renderer process (browser context).
 // It connects to the BridgeServer WebSocket and responds to cursor position requests

@@ -1,3 +1,5 @@
+# Copyright (c) Microsoft. All rights reserved.
+
 """
 All-turns multi-turn grounding evaluation via API providers (OpenAI, Claude, Qwen).
 
