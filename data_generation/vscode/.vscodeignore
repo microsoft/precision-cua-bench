@@ -1,0 +1,8 @@
+.vscode/**
+.vscode-test/**
+src/**
+!src/dom-payload.js
+.gitignore
+tsconfig.json
+**/*.ts
+**/*.map
