@@ -65,6 +65,20 @@ npm run compile
 
 See [data_generation/vscode/README.md](data_generation/vscode/README.md) for detailed setup and usage instructions.
 
+### Dataset
+
+Dataset is available and is in the following structure
+
+```
+dataset
+├── images                      # Visual state screenshots of the scenarios
+├── cursor_dark                 # Instructions for Cursor Dark
+├── cursor_light                # Instructions for Cursor Light
+├── vscode_dark                 # Instructions for Vscode Dark
+├── vscode_light                # Instructions for Vscode Light
+```
+
+
 ## Evaluation
 
 The evaluation script (`eval/test_allturns_api.py`) runs multi-turn grounding evaluation against API providers. On each turn, if the model's prediction is incorrect, a **red cross** is drawn at the predicted location on the screenshot and the model is prompted to self-correct.
