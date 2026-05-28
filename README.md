@@ -1,3 +1,4 @@
+<!-- Copyright (c) Microsoft. All rights reserved. -->
 # GUI Grounding with Multi-Turn Self-Correction
 
 A framework for **GUI grounding** — predicting exact pixel coordinates of UI elements from screenshots and natural language descriptions. Includes a VS Code extension for training data generation, and a multi-turn evaluation harness that supports self-correction via visual feedback.
@@ -77,6 +78,43 @@ dataset
 ├── vscode_dark                 # Instructions for Vscode Dark
 ├── vscode_light                # Instructions for Vscode Light
 ```
+
+#### Sample Preview
+
+Each sample pairs a screenshot of the IDE with a natural-language instruction and the ground-truth pixel coordinates / bounding box of the target UI element.
+
+**Screenshot** (`dataset/images/main_2026-05-03T17-47-37-187Z_screenshot.png`, VS Code dark theme):
+
+![VS Code dark theme sample](dataset/images/main_2026-05-03T17-47-37-187Z_screenshot.png)
+
+**Sample entry** (from `dataset/vscode_dark/combined_data.jsonl`):
+
+```json
+{
+  "image": "main_2026-05-03T17-47-37-187Z_screenshot.png",
+  "conversations": [
+    {
+      "from": "human",
+      "value": "In main.py line 5, move the caret to just before the 'r' in 'torch', between the letters 'o' and 'r'."
+    },
+    {
+      "from": "gpt",
+      "value": "(310,173)"
+    }
+  ],
+  "bbox": [309.375, 164.0625, 310.9375, 182.6171875],
+  "image_size": [1280, 1024],
+  "label_type": "vscode_extn"
+}
+```
+
+| Field | Description |
+|---|---|
+| `image` | Screenshot filename (resolved against `dataset/images/`) |
+| `conversations` | Human instruction and ground-truth `(x, y)` pixel coordinate response |
+| `bbox` | Target bounding box `[x0, y0, x1, y1]` in pixel coordinates |
+| `image_size` | `[width, height]` of the screenshot in pixels |
+| `label_type` | Annotation category (e.g. `vscode_extn`, `vscode_extn_line`) |
 
 
 ## Evaluation
