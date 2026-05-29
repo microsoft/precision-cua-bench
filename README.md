@@ -1,7 +1,10 @@
 <!-- Copyright (c) Microsoft. All rights reserved. -->
-# GUI Grounding with Multi-Turn Self-Correction
+# PrecisionCUA: Iterative Visual Refinement for Pixel-Precise Cursor Grounding in Code Editors
 
 A framework for **GUI grounding** — predicting exact pixel coordinates of UI elements from screenshots and natural language descriptions. Includes a VS Code extension for training data generation, and a multi-turn evaluation harness that supports self-correction via visual feedback.
+
+[ArXiv](https://arxiv.org/pdf/2604.13019)
+
 
 ## Overview
 
